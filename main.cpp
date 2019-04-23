@@ -5,7 +5,7 @@
 #include <unordered_map>
 using namespace std;
 
-struct record {
+struct Record {
     string name;
     int ID;
     string major;
@@ -23,7 +23,7 @@ struct record {
 };
 
 // Returns the average GPA of a list of records
-double gpaAverage(vector<record> list) {
+double gpaAverage(vector<Record> list) {
     double sum = 0;
     for (int i = 0; i < list.size(); i++) {
         sum += list[i].GPA;
@@ -43,7 +43,7 @@ int main() {
     fullMajorNameFor["BIOLG"] = "Biology";
     
     // Hash Map to store list of records grouped according to thier majors
-    unordered_map<string, vector<record>> listOfRecordsFor;
+    unordered_map<string, vector<Record>> listOfRecordsFor;
     
     fstream in;
     string line;
@@ -75,7 +75,7 @@ int main() {
         double GPA = stod(listOfWords[5]);
         string status = listOfWords[6];
         
-        record studentInfo(name, ID, major, hours, GPA, status);
+        Record studentInfo(name, ID, major, hours, GPA, status);
         
         major = fullMajorNameFor[major];
         
