@@ -12,7 +12,7 @@ struct Record {
     int hours;
     double GPA;
     string status;
-    record(string name, int ID, string major, int hours, double GPA, string status) {
+    Record(string name, int ID, string major, int hours, double GPA, string status) {
         this->name = name;
         this->ID = ID;
         this->major = major;
